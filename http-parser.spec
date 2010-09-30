@@ -3,7 +3,7 @@
 
 Name:           http-parser
 Version:        %{somajor}.%{sominor}
-Release:        2.20100911git%{?dist}
+Release:        2.20100911git%{?dist}.1
 Summary:        HTTP request/response parser for C
 
 Group:          System Environment/Libraries
@@ -78,6 +78,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Sep 29 2010 jkeating - 0.3-2.20100911git.1
+- Rebuilt for gcc bug 634757
+
 * Mon Sep 20 2010 Lubomir Rintel <lkundrak@v3.sk> - 0.3-2.20100911git
 - Call ldconfig (Peter Lemenkov)
 
