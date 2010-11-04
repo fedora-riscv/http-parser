@@ -3,7 +3,7 @@
 
 Name:           http-parser
 Version:        %{somajor}.%{sominor}
-Release:        2.20100911git%{?dist}.1
+Release:        4.20100911git%{?dist}
 Summary:        HTTP request/response parser for C
 
 Group:          System Environment/Libraries
@@ -38,8 +38,8 @@ Development headers and libraries for htt-parser.
 
 
 %build
-make %{?_smp_mflags} CC="%{__cc} %{optflags} -fPIC" http_parser.o
-%{__cc} $(rpm --eval %optflags) -Wl,-soname,http_parser.so.%{somajor} \
+make %{?_smp_mflags} CC="%{__cc} %{optflags} -fsigned-char -fPIC" http_parser.o
+%{__cc} %{optflags} -Wl,-soname,http_parser.so.%{somajor} \
         -o libhttp_parser.so -shared http_parser.o
 
 
@@ -54,7 +54,7 @@ ln -sf libhttp_parser.so.%{somajor}.%{sominor} $RPM_BUILD_ROOT%{_libdir}/libhttp
 
 
 %check
-make %{?_smp_mflags} CC="%{__cc} %{optflags} -fPIC" test
+make %{?_smp_mflags} CC="%{__cc} %{optflags} -fsigned-char -fPIC" test
 
 
 %clean
@@ -78,6 +78,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Nov  4 2010 Dan Horák <dan[at]danny.cz> - 0.3-4.20100911git
+- build with -fsigned-char
+
 * Wed Sep 29 2010 jkeating - 0.3-2.20100911git.1
 - Rebuilt for gcc bug 634757
 
