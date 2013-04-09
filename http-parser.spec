@@ -8,7 +8,7 @@
 
 Name:           http-parser
 Version:        %{somajor}.%{sominor}
-Release:        3.%{git_date}git%{git_commit_hash}%{?dist}
+Release:        4.%{git_date}git%{git_commit_hash}%{?dist}
 Summary:        HTTP request/response parser for C
 
 Group:          System Environment/Libraries
@@ -102,6 +102,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Apr 09 2013 Stephen Gallagher <sgallagh@redhat.com> - 2.0-4.20121128gitcd01361
+- Bumping revision for rebuild
+
 * Sun Dec 02 2012 T.C. Hollingsworth <tchollingsworth@gmail.com> - 2.0-3.20121128gitcd01361
 - latest git snapshot
 - fixes buffer overflow in tests
