@@ -1,6 +1,6 @@
 Name:           http-parser
 Version:        2.9.4
-Release:        8.rv64%{?dist}
+Release:        9.rv64%{?dist}
 Summary:        HTTP request/response parser for C
 
 License:        MIT
@@ -79,6 +79,9 @@ EOF
 %{_libdir}/libhttp_parser_strict.so
 
 %changelog
+* Thu Jul 20 2023 Fedora Release Engineering <releng@fedoraproject.org> - 2.9.4-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
+
 * Sun Apr 09 2023 Liu Yang <Yang.Liu.sn@gmail.com> - 2.9.4-8.rv64
 - Fix test failure on riscv64 Qemu based koji.
 
